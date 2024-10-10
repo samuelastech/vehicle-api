@@ -6,10 +6,10 @@ import (
 )
 
 type service struct {
-	repository common.Repository
+	repository common.Repository[domain.Vehicle]
 }
 
-func NewService(repository common.Repository) *service {
+func NewService(repository common.Repository[domain.Vehicle]) *service {
 	return &service{repository}
 }
 
@@ -21,4 +21,9 @@ func (s *service) GetAll() (domain.Vehicles, error) {
 	}
 
 	return list, nil
+}
+
+func (s *service) Create(vehicle domain.Vehicle) (createdVehicle domain.Vehicle) {
+	createdVehicle = s.repository.Create(vehicle)
+	return
 }

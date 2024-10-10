@@ -1,22 +1,24 @@
 package domain
 
 type Dimensions struct {
-	Width, Height, Length float64
+	Width  float64 `json:"width"`
+	Height float64 `json:"height"`
+	Length float64 `json:"length"`
 }
 
 type Vehicle struct {
-	ID               int
-	Brand            string
-	Model            string
-	Color            string
-	FabricationYear  int
-	MaxSpeed         float64
-	SeatingCapacity  int
-	FuelType         string
-	TransmissionType string
-	Registration     string
-	Weight           float64
+	ID               int     `json:"id"`
+	Brand            string  `json:"brand"`
+	Model            string  `json:"model"`
+	Color            string  `json:"color"`
+	FabricationYear  int     `json:"fabricationYear"`
+	MaxSpeed         float64 `json:"maxSpeed"`
+	SeatingCapacity  int     `json:"seatingCapacity"`
+	FuelType         string  `json:"fuelType"`
+	TransmissionType string  `json:"transmissionType"`
+	Registration     string  `json:"registration"`
+	Weight           float64 `json:"weight"`
 	Dimensions
 }
 
-type Vehicles []Vehicle
+type Vehicles = []Vehicle

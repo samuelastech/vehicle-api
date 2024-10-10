@@ -1,7 +1,6 @@
 package common
 
-import "github.com/samuelastech/vehicle-api/internal/domain"
-
-type Repository interface {
-	GetAll() domain.Vehicles
+type Repository[T any] interface {
+	GetAll() []T
+	Create(entity T) (createdEntity T)
 }
